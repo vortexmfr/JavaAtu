@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="LoopsMFR">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/LoopsMFR/CalculadoraMenuManuelFdez.zip!/" />
+      <root url="jar://$PROJECT_DIR$/src/LoopsMFR/CalculadoraMenu.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

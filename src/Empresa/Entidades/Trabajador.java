@@ -9,6 +9,7 @@ public class Trabajador {
     private String contrasena;
     private long ventas;
     private Cliente[] clientes;
+    private Producto[] productos;
 
     public Trabajador(int numeroEmpleado, String nombre, String DNI, int salario, Cargos cargo, String contrasena, long ventas, Cliente[] clientes) {
         this.numeroEmpleado = numeroEmpleado;

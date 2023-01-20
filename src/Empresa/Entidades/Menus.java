@@ -23,7 +23,7 @@ public class Menus {
                     System.out.println("Saliendo del programa....");
                     break;
                 case 1:
-                    crearTrabajador();
+                    crearTrabajador("");
                     break;
                 case 2:
                     desvincularTrabajador();
@@ -57,7 +57,7 @@ public class Menus {
                     repartirClientes();
                     break;
                 case 2:
-                    crearTrabajador();
+                    crearTrabajador("");
                     break;
                 case 3:
                     anadirInventario();
@@ -86,7 +86,7 @@ public class Menus {
                     conseguirCliente();
                     break;
                 default:
-                    System.out.println("Opcion no valida");
+                    System.out.println("Opción no valida");
                     break;
             }
         } while (option != 0);
@@ -102,7 +102,9 @@ public class Menus {
         System.out.println("Conseguir Cliente");
     };
 
-    static void crearTrabajador() throws IOException {
+    static void crearTrabajador(String car) throws IOException {
+        Cargos cargo;
+
         System.out.println("Crear Trabajador");
 
         System.out.println("Introduce numero del empleado:");
@@ -113,8 +115,15 @@ public class Menus {
         String dnis =buffer.readLine();
         System.out.println("Introduce Salario del empleado:");
         int salario = Integer.parseInt(buffer.readLine());
-        System.out.println("Introduce Cargo del empleado:");
-        Cargos cargo = Cargos.valueOf(buffer.readLine());
+
+        //Si creo Jefe lo paso por Parametro
+        if (car != "") {
+            cargo = Cargos.valueOf(car);
+        } else {
+            System.out.println("Introduce Cargo del empleado:");
+            cargo = Cargos.valueOf(buffer.readLine());
+        }
+
         System.out.println("Introduce contraseña del empleado:");
         String login = buffer.readLine();
         System.out.println("Introduce ventas del empleado:");

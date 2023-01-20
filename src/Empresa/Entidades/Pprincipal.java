@@ -1,8 +1,12 @@
 package Empresa.Entidades;
 
+import ClasesManuelFernandez.Materia;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import static Empresa.Entidades.Menus.crearTrabajador;
 
 public class Pprincipal {
 
@@ -16,25 +20,48 @@ public class Pprincipal {
 
     public static void main(String[] args) throws IOException {
 
+        /*  Rellenar tabla trabajadores  Debug
         trabajadores[0] = new  Trabajador(100, "Manuel", "28934567", 23000, Cargos.TRABAJADOR, "ABC123", 12356, new Cliente[5]);
         trabajadores[1] = new  Trabajador(200, "Luis", "3456789", 45000, Cargos.GERENTE, "ABC123", 12356, new Cliente[5]);
         trabajadores[2] = new  Trabajador(300, "Maria", "86345687", 67000, Cargos.JEFE, "ABC123", 12356, new Cliente[5]);
         trabajadores[3] = new  Trabajador(301, "Pepi", "687", 67000, Cargos.TRABAJADOR, "ABC123", 12356, new Cliente[5]);
-        acceso();
+        */
 
-        // muestra los trabajadores
+        if (hayTrabajadores() == true) {
+            acceso();
+        } else {
+            System.out.println("***********************************************************");
+            System.out.println("La empresa no esta creada necesitamos crear el usuario JEFE");
+            System.out.println("***********************************************************");
+            crearTrabajador("JEFE");
+            acceso();
+        }
+
+
+
+        //Depuracion
         for (int i = 0; i < trabajadores.length; i++) {
             if (trabajadores[i] != null) {
                 System.out.println(trabajadores[i].getNumeroEmpleado()+ " " + trabajadores[i].getNombre() + " " +trabajadores[i].getDNI());
             }
         }
 
-        // Muestra los productos
         for (int i = 0; i < productos.length; i++) {
             if (productos[i] != null) {
                 System.out.println(productos[i].getNombreProducto()+ " " + productos[i].getProductId() + " " +productos[i].getNumeroExistencias());
             }
         }
+
+    }
+
+    static boolean hayTrabajadores() {
+        boolean hay = false;
+
+        for (int i = 0; i < trabajadores.length; i++) {
+            if (trabajadores[i] != null)
+                hay = true;
+        }
+        return hay;
     }
 
     static void acceso() throws IOException {

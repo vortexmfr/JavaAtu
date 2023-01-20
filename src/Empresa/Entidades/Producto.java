@@ -2,7 +2,7 @@ package Empresa.Entidades;
 
 public class Producto {
 
-    private String productId;
+    private String productId;  // Assignarle la posición del array
     private String nombreProducto;
     private float precioUnidad;
     private int numeroExistencias;

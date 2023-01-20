@@ -54,6 +54,7 @@ public class Main {
         A implementation = new B();
         System.out.println(((B) implementation).multiplicavalor(2));
         System.out.println(((B) implementation).suma(3,5));
+        System.out.println(((B) implementation).multiplica(3,5));
 
         A implementacion2 = new C();
         System.out.println(((C) implementacion2).multiplicavalor(2));
